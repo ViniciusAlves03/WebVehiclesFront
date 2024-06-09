@@ -1,0 +1,157 @@
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container_store {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.store_info {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.store_logo {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.store_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.store_details h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.store_details p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.buttons button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.container_vehicles {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+}
+
+.vehicles {
+    background-color: #FFF;
+    width: 70%;
+    margin: auto;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.vehicles_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.vehicles_list a {
+    text-decoration: none;
+    color: black;
+}
+
+.vehicle_card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.vehicle_card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.vehicle_info {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.vehicle_info h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.vehicle_info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.vehicle_info p:last-of-type {
+    font-weight: bold;
+    color: #000;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.edit_button, .delete_button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.edit_button {
+    background-color: blue;
+}
+
+.edit_button:hover, .delete_button:hover {
+    background-color: darkred;
+}
+
+.edit_button:hover {
+    background-color: darkblue;
+}

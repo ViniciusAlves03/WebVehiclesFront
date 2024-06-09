@@ -1,0 +1,82 @@
+.vehicle_detail {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle_name {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.vehicle_images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.vehicle_image {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.vehicle_info {
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.vehicle_info a {
+    color: black;
+}
+
+.vehicle_info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.vehicle_info p strong {
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.edit_button, .delete_button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.edit_button {
+    background-color: blue;
+}
+
+.edit_button:hover, .delete_button:hover {
+    background-color: darkred;
+}
+
+.edit_button:hover {
+    background-color: darkblue;
+}

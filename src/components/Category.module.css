@@ -1,0 +1,54 @@
+.home {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+}
+
+.vehicles {
+    margin: 30px;
+}
+
+.vehicles {
+    background-color: #FFF;
+    width: 70%;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.vehicles_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.vehicles_list a{
+    text-decoration: none;
+    color: black;
+}
+
+.vehicle_card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #d3d3d3;
+}
+
+.vehicle_card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.vehicle_info {
+    text-align: left;
+}
+
+.vehicle_info p {
+    text-align: center;
+}

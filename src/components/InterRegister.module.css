@@ -1,0 +1,37 @@
+.registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    gap: 2em;
+    padding: 2em;
+}
+
+.registration_option {
+    background-color: #FF0000;
+    color: #FFF;
+    padding: 2em;
+    border-radius: 8px;
+    text-align: center;
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration_option a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.registration_option h2 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.registration_option p {
+    margin:.5em 0 0;
+    font-size: 25px;
+}
