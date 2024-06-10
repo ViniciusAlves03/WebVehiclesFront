@@ -62,17 +62,30 @@
 .see_more {
     background-color: white;
     color: black;
-    padding: 10px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin: 20px;
+    width: 150px;
+    height: 40px;
+    padding: 5px 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .see_more:hover {
     background-color: #d3d3d3;
 }
+
 .see_more a {
     text-decoration: none;
     color: black;
+}
+
+.see_more_container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
 }

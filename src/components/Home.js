@@ -1,24 +1,23 @@
-import { Link } from 'react-router-dom'
-import styles from './Home.module.css'
+import { Link } from 'react-router-dom';
+import styles from './Home.module.css';
 
-//images
-import CarImage from '../public/home/car.jpg'
-import TruckImage from '../public/home/truck.jpeg'
-import MotorcycleImage from '../public/home/motorcycle.jpg'
-import civicImage1 from '../public/home/civic.jpeg'
-import civicImage2 from '../public/home/civic2.jpeg'
-import mt03Image from '../public/home/mt03.jpg'
-import fh540Image from '../public/home/volvoFH540.jpg'
+// Images
+import CarImage from '../public/home/car.jpg';
+import TruckImage from '../public/home/truck.jpeg';
+import MotorcycleImage from '../public/home/motorcycle.jpg';
+import civicImage1 from '../public/home/civic.jpeg';
+import civicImage2 from '../public/home/civic2.jpeg';
+import mt03Image from '../public/home/mt03.jpg';
+import fh540Image from '../public/home/volvoFH540.jpg';
 
 function Home() {
-
     return (
         <div className={styles.home}>
             <div className={styles.categories}>
                 <div className={styles.categories_list}>
-                    <CategoryCard title="Carros" image={CarImage} url = "/vehicle/category/car"/>
-                    <CategoryCard title="Caminhões" image={TruckImage} url = "/vehicle/category/truck"/>
-                    <CategoryCard title="Motos" image={MotorcycleImage} url = "/vehicle/category/motorcycle"/>
+                    <CategoryCard title="Carros" image={CarImage} url="/vehicle/category/car" />
+                    <CategoryCard title="Caminhões" image={TruckImage} url="/vehicle/category/truck" />
+                    <CategoryCard title="Motos" image={MotorcycleImage} url="/vehicle/category/motorcycle" />
                 </div>
             </div>
             <div className={styles.vehicles}>
@@ -57,7 +56,11 @@ function Home() {
                         image={civicImage2}
                     />
                 </div>
-                <button className={styles.see_more}><Link to={'/vehicle/'}>Ver mais</Link></button>
+                <div className={styles.see_more_container}>
+                    <button className={styles.see_more}>
+                        <Link to="/vehicle/">Ver mais</Link>
+                    </button>
+                </div>
             </div>
         </div>
     );
@@ -83,4 +86,5 @@ const VehicleCard = ({ name, model, price, year, location, image }) => (
     </div>
 );
 
-export default Home
+export default Home;
+

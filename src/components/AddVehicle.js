@@ -1,14 +1,13 @@
-// src/components/MotorcycleForm.js
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import './MotorcycleForm.css';
-import { useParams } from 'react-router-dom';
+import './AddVehicle.css';
+import { Link, useParams } from 'react-router-dom';
 
-const MotorcycleForm = () => {
+const AddVehicle = () => {
 
   const { id, type } = useParams();
-  const [token] =  useState(localStorage.getItem('token') || '');
+  const [token] = useState(localStorage.getItem('token') || '');
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
@@ -124,10 +123,26 @@ const MotorcycleForm = () => {
           <input type="file" id="image3" {...register('image3', { required: true })} />
           {errors.image3 && <span>Imagem 3 é obrigatória</span>}
         </div>
+        <div className="form-group">
+          <label htmlFor="numSeats">Quantidade de assentos</label>
+          <input id="numSeats" {...register('numSeats')} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="numDoors">Quantidade de portas</label>
+          <input id="numDoors" {...register('numDoors')} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="cargoCapacity">Capacidade de Carga</label>
+          <input id="cargoCapacity" {...register('cargoCapacity')} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="numAxles">Eixos</label>
+          <input id="numAxles" {...register('numAxles')} />
+        </div>
         <button type="submit">Confirmar</button>
       </form>
     </div>
   );
 };
 
-export default MotorcycleForm;
+export default AddVehicle;
