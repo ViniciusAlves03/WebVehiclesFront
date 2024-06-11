@@ -33,8 +33,8 @@ const StorePage = () => {
                         <p>Endereço: {`${store.street}, ${store.number}, ${store.city} - ${store.state} `}</p>
                         {authenticated && (
                             <div className={styles.buttons}>
-                                <Link to={`/edit/${id}`} className={styles.edit_button}>Editar</Link>
-                                <Link to={`/delete/${id}`} className={styles.delete_button}>Excluir</Link>
+                                <Link to={`store/edit/${id}`} className={styles.edit_button}>Editar</Link>
+                                <Link to={`store/delete/${id}`} className={styles.delete_button}>Excluir</Link>
                             </div>
                         )}
                     </div>

@@ -31,7 +31,7 @@ export default function useAuth() {
                 return response.data
             })
 
-            await authUser(data)
+            await authStore(data)
         } catch (error) {
             msgText = error.response.data.message
             msgType = 'error'
@@ -65,7 +65,16 @@ export default function useAuth() {
 
         localStorage.setItem('token', JSON.stringify(data.token))
 
-        navigate('/')
+        navigate(`/client/login`)
+    }
+
+    async function authUserLogin(data){
+
+        setAuthenticated(true)
+
+        localStorage.setItem('token', JSON.stringify(data.token))
+
+        navigate(`/client/page/${data.clientId}`)
     }
 
     async function authStore(data){
@@ -74,10 +83,19 @@ export default function useAuth() {
 
         localStorage.setItem('token', JSON.stringify(data.token))
         console.log(data)
+        navigate(`/store/login`)
+    }
+
+    async function authStoreLogin(data){
+
+        setAuthenticated(true)
+
+        localStorage.setItem('token', JSON.stringify(data.token))
+        console.log(data)
         navigate(`/store/page/${data.clientId}`)
     }
 
-    async function login(user){
+    async function login(user, type){
         let msgText = 'Login realizado com sucesso!'
         let msgType = 'sucess'
 
@@ -87,7 +105,7 @@ export default function useAuth() {
                 return response.data
             })
 
-            await authUser(data)
+            await authUserLogin(data)
 
         } catch (error) {
             msgText = error.response.data.message
@@ -105,7 +123,7 @@ export default function useAuth() {
                 return response.data
             })
 
-            await authStore(data)
+            await authStoreLogin(data)
 
         } catch (error) {
             msgText = error.response.data.message

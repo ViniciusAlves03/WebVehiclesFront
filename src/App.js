@@ -18,6 +18,7 @@ import StoreScreen from './components/StoreScreen';
 import StorePage from './components/StorePage';
 import VehicleDetailsStore from './components/VehicleDetailsStore';
 import AddVehicle from './components/AddVehicle';
+import ClientPage from './components/ClientPage';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path='/store/login' element={<StoreLogin />}></Route>
           <Route path='/store/:id' element={<StoreScreen />}></Route>
           <Route path='/store/page/:id' element={<StorePage />}></Route>
+          <Route path='/client/page/:id' element={<ClientPage />}></Route>
           <Route path='/myvehicle/:id' element={<VehicleDetailsStore />}></Route>
           <Route path='/vehicle/:type/store/:id' element={<AddVehicle />}></Route>
         </Routes>

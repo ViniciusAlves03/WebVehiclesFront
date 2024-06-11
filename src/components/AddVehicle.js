@@ -14,7 +14,6 @@ const AddVehicle = () => {
     const formData = new FormData();
     formData.append('name', data.name);
     formData.append('engine', data.engine);
-    formData.append('type', data.type);
     formData.append('plate', data.plate);
     formData.append('chassis', data.chassis);
     formData.append('color', data.color);
@@ -24,10 +23,19 @@ const AddVehicle = () => {
     formData.append('brakes', data.brakes);
     formData.append('price', data.price);
     formData.append('transmission', data.transmission);
-    formData.append('startingSystem', data.startingSystem);
     formData.append('images', data.image1[0]);
     formData.append('images', data.image2[0]);
     formData.append('images', data.image3[0]);
+
+    if (type === 'motorcycle') {
+      formData.append('startingSystem', data.startingSystem);
+    } else if (type === 'car') {
+      formData.append('numSeats', data.numSeats);
+      formData.append('numDoors', data.numDoors);
+    } else if (type === 'truck') {
+      formData.append('cargoCapacity', data.cargoCapacity);
+      formData.append('numAxles', data.numAxles);
+    }
 
     try {
       const response = await axios.post(`http://localhost:5000/vehicle/${type}/store/${id}`, formData, {
@@ -60,11 +68,6 @@ const AddVehicle = () => {
           <label htmlFor="transmission">Transmissão</label>
           <input id="transmission" {...register('transmission', { required: true })} />
           {errors.transmission && <span>Transmissão é obrigatória</span>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="type">Tipo</label>
-          <input id="type" {...register('type', { required: true })} />
-          {errors.type && <span>Tipo é obrigatório</span>}
         </div>
         <div className="form-group">
           <label htmlFor="color">Cor</label>
@@ -104,10 +107,36 @@ const AddVehicle = () => {
           <input id="price" {...register('price', { required: true })} />
           {errors.price && <span>Preço é obrigatório</span>}
         </div>
-        <div className="form-group">
-          <label htmlFor="startingSystem">Sistema de partida</label>
-          <input id="startingSystem" {...register('startingSystem')} />
-        </div>
+        {type === 'motorcycle' && (
+          <div className="form-group">
+            <label htmlFor="startingSystem">Sistema de partida</label>
+            <input id="startingSystem" {...register('startingSystem')} />
+          </div>
+        )}
+        {type === 'car' && (
+          <>
+            <div className="form-group">
+              <label htmlFor="numSeats">Quantidade de assentos</label>
+              <input id="numSeats" {...register('numSeats')} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="numDoors">Quantidade de portas</label>
+              <input id="numDoors" {...register('numDoors')} />
+            </div>
+          </>
+        )}
+        {type === 'truck' && (
+          <>
+            <div className="form-group">
+              <label htmlFor="cargoCapacity">Capacidade de Carga</label>
+              <input id="cargoCapacity" {...register('cargoCapacity')} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="numAxles">Eixos</label>
+              <input id="numAxles" {...register('numAxles')} />
+            </div>
+          </>
+        )}
         <div className="form-group">
           <label htmlFor="image1">Imagem 1</label>
           <input type="file" id="image1" {...register('image1', { required: true })} />
@@ -123,23 +152,8 @@ const AddVehicle = () => {
           <input type="file" id="image3" {...register('image3', { required: true })} />
           {errors.image3 && <span>Imagem 3 é obrigatória</span>}
         </div>
-        <div className="form-group">
-          <label htmlFor="numSeats">Quantidade de assentos</label>
-          <input id="numSeats" {...register('numSeats')} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="numDoors">Quantidade de portas</label>
-          <input id="numDoors" {...register('numDoors')} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="cargoCapacity">Capacidade de Carga</label>
-          <input id="cargoCapacity" {...register('cargoCapacity')} />
-        </div>
-        <div className="form-group">
-          <label htmlFor="numAxles">Eixos</label>
-          <input id="numAxles" {...register('numAxles')} />
-        </div>
         <button type="submit">Confirmar</button>
+        <Link to={`/store/page/${id}`}><button>Voltar</button></Link>
       </form>
     </div>
   );

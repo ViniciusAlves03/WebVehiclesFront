@@ -132,7 +132,7 @@
     margin-top: 20px;
 }
 
-.edit_button, .delete_button {
+.edit_button, .delete_button, .initial_button {
     background-color: red;
     color: white;
     border: none;
@@ -147,6 +147,14 @@
 
 .edit_button {
     background-color: blue;
+}
+
+.initial_button {
+    background-color: gray;
+}
+
+.initial_button:hover{
+    background-color: #d3d3d3;
 }
 
 .edit_button:hover, .delete_button:hover {

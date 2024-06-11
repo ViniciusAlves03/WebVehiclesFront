@@ -47,6 +47,14 @@ button {
     margin-top: 1.5rem;
 }
 
+a button{
+    background-color: gray;
+}
+
+a button:hover{
+    background-color: #d3d3d3;
+}
+
 button:hover {
     background-color: darkgreen;
 }
