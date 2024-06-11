@@ -9,6 +9,7 @@ const VehicleDetailsStore = () => {
     const [vehicle, setVehicle] = useState(null)
     const [store, setStore] = useState(null)
     const { authenticated } = useContext(Context)
+    const [token] = useState(localStorage.getItem('token'));
 
     useEffect(() => {
         api.get(`/vehicle/${id}`)
@@ -47,13 +48,26 @@ const VehicleDetailsStore = () => {
                     ['Capacidade de Carga', `${vehicle.cargoCapacity} Kg`]
                 ];
             case 'motorcycle':
-                return [['Partida', vehicle.startSystem]];
+                return [['Partida', vehicle.startingSystem]];
             default:
                 return [];
         }
     };
 
     const attributesToShow = getAttributesToShow();
+
+    const handleDelete = async () => {
+        try {
+            await api.delete(`/vehicle/${id}/store/${store.id}`, {
+                headers: {
+                    'Authorization': `Bearer ${JSON.parse(token)}`
+                }
+            });
+
+        } catch (error) {
+            console.error("Error deleting client:", error);
+        }
+    }
 
     return (
         <div className={styles.vehicle_detail}>
@@ -67,7 +81,7 @@ const VehicleDetailsStore = () => {
                 {authenticated && (
                     <div className={styles.buttons}>
                         <Link to={`/edit/${id}`} className={styles.edit_button}>Editar</Link>
-                        <Link to={`/delete/${id}`} className={styles.delete_button}>Excluir</Link>
+                        <Link to={`/`} className={styles.delete_button} onClick={handleDelete}>Excluir</Link>
                     </div>
                 )}
             </div>
@@ -85,7 +99,7 @@ const VehicleDetailsStore = () => {
                 ))}
                 {store && (
                     <div>
-                        <p><strong>Nome:</strong> <Link to={`/store/${vehicle.storeId}`}>{store.name}</Link></p>
+                        <p><strong>Loja:</strong> <Link to={`/store/${vehicle.storeId}`}>{store.name}</Link></p>
                     </div>
                 )}
             </div>

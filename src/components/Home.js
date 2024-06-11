@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
-// Images
 import CarImage from '../public/home/car.jpg';
 import TruckImage from '../public/home/truck.jpeg';
 import MotorcycleImage from '../public/home/motorcycle.jpg';

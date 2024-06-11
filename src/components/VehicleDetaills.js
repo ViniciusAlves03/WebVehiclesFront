@@ -45,7 +45,7 @@ const VehicleDetails = () => {
                     ['Capacidade de Carga', `${vehicle.cargoCapacity} Kg`]
                 ];
             case 'motorcycle':
-                return [['Partida', vehicle.startSystem]];
+                return [['Partida', vehicle.startingSystem]];
             default:
                 return [];
         }
@@ -77,7 +77,7 @@ const VehicleDetails = () => {
                 ))}
                 {store && (
                     <div>
-                        <p><strong>Nome:</strong> <Link to={`/store/${vehicle.storeId}`}>{store.name}</Link></p>
+                        <p><strong>Loja:</strong> <Link to={`/store/${vehicle.storeId}`}>{store.name}</Link></p>
                     </div>
                 )}
             </div>

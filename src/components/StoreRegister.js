@@ -35,7 +35,6 @@ function ClientRegister() {
                 <Input text="Estado" type="text" name="state" placeholder="Informe o estado" handleOnChange={handleChange} />
                 <input type="submit" value="Cadastrar" />
             </form>
-            <p>Já tem conta ? <Link to='/client/login'>Clique aqui</Link></p>
         </section>
     )
 }

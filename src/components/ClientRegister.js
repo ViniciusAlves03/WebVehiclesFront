@@ -30,7 +30,6 @@ function ClientRegister() {
                 <Input text="Senha" type="password" name="password" placeholder="Digite a senha" handleOnChange={handleChange} />
                 <input type="submit" value="Cadastrar" />
             </form>
-            <p>Já tem conta ? <Link to='/client/login'>Clique aqui</Link></p>
         </section>
     )
 }
