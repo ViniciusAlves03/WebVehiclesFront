@@ -8,7 +8,8 @@ const StorePage = () => {
     const { id } = useParams();
     const [store, setStore] = useState(null);
     const [vehicles, setVehicles] = useState([]);
-    const { authenticated } = useContext(Context)
+    const { authenticated, logout } = useContext(Context)
+    const [token] = useState(localStorage.getItem('token'));
 
     useEffect(() => {
         api.get(`/store/${id}`)
@@ -22,6 +23,20 @@ const StorePage = () => {
 
     if (!store) return <p>Loading...</p>;
 
+    const handleDelete = async () => {
+        try {
+            await api.delete(`/store/${id}`, {
+                headers: {
+                    'Authorization': `Bearer ${JSON.parse(token)}`
+                }
+            });
+
+            logout()
+        } catch (error) {
+            console.error("Error deleting client:", error);
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.container_store}>
@@ -33,8 +48,9 @@ const StorePage = () => {
                         <p>Endereço: {`${store.street}, ${store.number}, ${store.city} - ${store.state} `}</p>
                         {authenticated && (
                             <div className={styles.buttons}>
-                                <Link to={`store/edit/${id}`} className={styles.edit_button}>Editar</Link>
-                                <Link to={`store/delete/${id}`} className={styles.delete_button}>Excluir</Link>
+                                <Link to={`/store/edit/${id}`} className={styles.edit_button}>Editar</Link>
+                                <Link to={`/`} className={styles.delete_button} onClick={handleDelete}>Excluir</Link>
+                                <Link to={`/`} className={styles.initial_button}>Tela inicial</Link>
                             </div>
                         )}
                     </div>

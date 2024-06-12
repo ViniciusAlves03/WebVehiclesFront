@@ -14,16 +14,22 @@ function Home() {
         <div className={styles.home}>
             <div className={styles.categories}>
                 <div className={styles.categories_list}>
-                    <CategoryCard title="Carros" image={CarImage} url="/vehicle/category/car" />
-                    <CategoryCard title="Caminhões" image={TruckImage} url="/vehicle/category/truck" />
-                    <CategoryCard title="Motos" image={MotorcycleImage} url="/vehicle/category/motorcycle" />
+                    <Link to={'/vehicle/category/car'}>
+                        <CategoryCard title="Carros" image={CarImage} url="/vehicle/category/car" />
+                    </Link>
+                    <Link to={'/vehicle/category/truck'}>
+                        <CategoryCard title="Caminhões" image={TruckImage} url="/vehicle/category/truck" />
+                    </Link>
+                    <Link to={'/vehicle/category/motorcycle'}>
+                        <CategoryCard title="Motos" image={MotorcycleImage} url="/vehicle/category/motorcycle" />
+                    </Link>
                 </div>
             </div>
             <div className={styles.vehicles}>
                 <h2>Veículos</h2>
                 <div className={styles.vehicles_list}>
                     <VehicleCard
-                        name="Honda Civic"
+                        name="Civic"
                         model="2.0 VTI FLEX"
                         price="R$ 200.000"
                         year="2023/2024"
@@ -31,7 +37,7 @@ function Home() {
                         image={civicImage1}
                     />
                     <VehicleCard
-                        name="Yamaha MT03"
+                        name="MT03"
                         model="321cc FLEX"
                         price="R$ 20.000"
                         year="2019/2020"
@@ -39,7 +45,7 @@ function Home() {
                         image={mt03Image}
                     />
                     <VehicleCard
-                        name="Volvo FH 540"
+                        name="FH 540"
                         model="6x4 T"
                         price="R$ 610.000"
                         year="2020/2020"
@@ -47,7 +53,7 @@ function Home() {
                         image={fh540Image}
                     />
                     <VehicleCard
-                        name="Honda Civic"
+                        name="Civic"
                         model="2.0 VTI FLEX"
                         price="R$ 80.000"
                         year="2014/2014"
@@ -80,7 +86,6 @@ const VehicleCard = ({ name, model, price, year, location, image }) => (
             <p>{model}</p>
             <p>{price}</p>
             <p>{year}</p>
-            <p>{location}</p>
         </div>
     </div>
 );

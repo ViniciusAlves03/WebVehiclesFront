@@ -24,7 +24,7 @@ function Navbar() {
             <ul>
                 {authenticated ? (
                     <>
-                    <li className={styles.navbar_button} onClick={logout}>Sair</li>
+                        <li className={styles.navbar_button} onClick={logout}><Link>Sair</Link></li>
                     </>
                 ) : (
                     <>

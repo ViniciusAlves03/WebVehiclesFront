@@ -43,7 +43,7 @@ const ClientPage = () => {
                         <p>Contato: {client.phone}</p>
                         {authenticated && (
                             <div className={styles.buttons}>
-                                <Link to={`client/edit/${id}`} className={styles.edit_button}>Editar</Link>
+                                <Link to={`/client/edit/${id}`} className={styles.edit_button}>Editar</Link>
                                 <Link to={`/`} className={styles.delete_button} onClick={handleDelete}>Excluir</Link>
                                 <Link to={`/`} className={styles.initial_button}>Tela inicial</Link>
                             </div>

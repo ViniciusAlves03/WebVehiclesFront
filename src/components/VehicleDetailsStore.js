@@ -74,14 +74,14 @@ const VehicleDetailsStore = () => {
             <div className={styles.vehicle_images}>
                 <img key={1} src={`http://localhost:5000/images/${vehicle.image1}`} alt={`${vehicle.name} ${1}`} className={styles.vehicle_image} />
                 <img key={2} src={`http://localhost:5000/images/${vehicle.image2}`} alt={`${vehicle.name} ${2}`} className={styles.vehicle_image} />
-                <img key={3} src={`http://localhost:5000/images/${vehicle.image1}`} alt={`${vehicle.name} ${3}`} className={styles.vehicle_image} />
+                <img key={3} src={`http://localhost:5000/images/${vehicle.image3}`} alt={`${vehicle.name} ${3}`} className={styles.vehicle_image} />
             </div>
             <div>
                 <h1 className={styles.vehicle_name}>{vehicle.name}</h1>
                 {authenticated && (
                     <div className={styles.buttons}>
-                        <Link to={`/edit/${id}`} className={styles.edit_button}>Editar</Link>
-                        <Link to={`/`} className={styles.delete_button} onClick={handleDelete}>Excluir</Link>
+                        <Link to={`/vehicle/${id}/${vehicle.type}/store/${vehicle.storeId}`} className={styles.edit_button}>Editar</Link>
+                        <Link to={`/store/page/${vehicle.storeId}`} className={styles.delete_button} onClick={handleDelete}>Excluir</Link>
                     </div>
                 )}
             </div>

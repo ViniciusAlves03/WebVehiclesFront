@@ -19,6 +19,9 @@ import StorePage from './components/StorePage';
 import VehicleDetailsStore from './components/VehicleDetailsStore';
 import AddVehicle from './components/AddVehicle';
 import ClientPage from './components/ClientPage';
+import EditVehicle from './components/EditVehicle';
+import EditStore from './components/EditStore';
+import EditClient from './components/EditClient';
 
 function App() {
   return (
@@ -43,6 +46,9 @@ function App() {
           <Route path='/client/page/:id' element={<ClientPage />}></Route>
           <Route path='/myvehicle/:id' element={<VehicleDetailsStore />}></Route>
           <Route path='/vehicle/:type/store/:id' element={<AddVehicle />}></Route>
+          <Route path='/vehicle/:id/:type/store/:storeId' element={<EditVehicle />}></Route>
+          <Route path='/store/edit/:id' element={<EditStore />}></Route>
+          <Route path='/client/edit/:id' element={<EditClient />}></Route>
         </Routes>
         </UserProvider>
     </Router>
